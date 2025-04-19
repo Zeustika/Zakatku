@@ -1,0 +1,11 @@
+{
+    "name": "yozz/web-zakatfitrah",
+    "description": "Website to use for Zakat Fitrah",
+    "authors": [
+        {
+        }
+    ],
+    "require": {
+        "spipu/html2pdf": "^5.2"
+    }
+}

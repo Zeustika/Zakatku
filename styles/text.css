@@ -1,0 +1,258 @@
+/* === ISLAMIC CLEAN UI REFINEMENT FOR ZAKAT FITRAH APP === */
+
+/* Base Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Enhanced Table Styling */
+.box-table {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 20px;
+}
+
+#table-data {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#table-data thead tr {
+    background-color: #003366;
+    color: #FFFFFF;
+}
+
+#table-data th,
+#table-data td {
+    padding: 15px;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+#table-data tbody tr:hover {
+    background-color: rgba(80, 200, 120, 0.05);
+}
+
+/* Form Enhancements */
+.auth-form, .add-form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    transition: border 0.3s ease;
+}
+
+.input-with-icon i {
+    margin-right: 10px;
+    color: #50C878;
+}
+
+.input-with-icon input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+}
+
+.form-input {
+    font-family: 'Poppins', sans-serif;
+    padding: 12px 15px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #50C878;
+    box-shadow: 0 0 0 3px rgba(80, 200, 120, 0.2);
+    outline: none;
+}
+
+.add-form button,
+.auth-form button {
+    background: #50C878;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.add-form button:hover,
+.auth-form button:hover {
+    background: #3A9457;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Enhancement */
+.section-default {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-default::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath fill='%2350C878' fill-opacity='0.05' d='M9 0h2v20H9V0zm25.134...z'/%3E%3C/svg%3E");
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Page Title */
+.main-title {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 2.2rem;
+}
+
+.main-title::before {
+    content: "☪";
+    display: block;
+    color: #D4AF37;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.main-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #50C878, #D4AF37);
+    border-radius: 2px;
+}
+
+/* Section Labels */
+.page-label {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.page-label::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #50C878, #D4AF37);
+    border-radius: 2px;
+}
+
+/* Table Buttons */
+.table-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(80, 200, 120, 0.1);
+    color: #50C878;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.table-button:hover {
+    background: #50C878;
+    color: white;
+}
+
+.table-button:nth-child(2) {
+    background: rgba(255, 56, 92, 0.1);
+    color: #FF385C;
+}
+
+.table-button:nth-child(2):hover {
+    background: #FF385C;
+    color: white;
+}
+
+/* Success/Error messages */
+.signupSuccess,
+.signupError,
+.status-card {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.signupSuccess,
+.success-card {
+    background: rgba(80, 200, 120, 0.1);
+    color: #3A9457;
+    border-left: 4px solid #50C878;
+}
+
+.signupError,
+.error-card {
+    background: rgba(255, 56, 92, 0.1);
+    color: #FF385C;
+    border-left: 4px solid #FF385C;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .add-form {
+        flex-direction: column;
+    }
+
+    .add-form input,
+    .add-form select,
+    .add-form button {
+        width: 100%;
+    }
+
+    .button-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #table-data {
+        display: block;
+        overflow-x: auto;
+    }
+}

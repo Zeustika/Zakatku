@@ -1,0 +1,961 @@
+/* style.css - Redesigned for Zakat Fitrah Application */
+
+:root {
+    --primary: #50C878;      /* Hijau zamrud */
+    --primary-light: #7FD89F;
+    --primary-dark: #3A9457;
+    --secondary: #D4AF37;    /* Emas lembut */
+    --secondary-light: #E5C867;
+    --secondary-dark: #B18F1D;
+    --dark: #003366;         /* Biru tua */
+    --dark-light: #004C99;
+    --light: #FFFFFF;        /* Putih */
+    --gray: #717171;
+    --light-gray: #EBEBEB;
+    --success: #50C878;
+    --warning: #D4AF37;
+    --error: #FF385C;
+    --info: #003366;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --radius-sm: 6px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+    background-image: url('../img/pattern-arabic.png');
+    background-repeat: repeat;
+    background-size: 300px;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.92);
+    z-index: -1;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5em;
+    color: var(--dark);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Container */
+.wrapper-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--secondary);
+}
+
+.header-logo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.header-logo img {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.header-logo a::after {
+    content: "ZakatKu";
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.header-logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav-header-main ul {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+}
+
+.nav-header-main ul li a {
+    color: var(--dark);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-header-main ul li a:hover {
+    color: var(--primary);
+}
+
+.nav-header-main ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    transition: width 0.3s ease;
+}
+
+.nav-header-main ul li a:hover::after {
+    width: 100%;
+}
+
+/* Islamic decorative element for navigation */
+.nav-header-main ul::before {
+    content: "☪";
+    color: var(--secondary);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+/* Header Login Section */
+.header-login {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background-color: rgba(0, 51, 102, 0.05);
+    border-top: 1px solid rgba(0, 51, 102, 0.1);
+}
+
+.header-login form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header-login input {
+    padding: 12px 16px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--radius);
+    font-size: 14px;
+    transition: var(--transition);
+    width: 200px;
+    background-color: var(--light);
+}
+
+.header-login input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(80, 200, 120, 0.2);
+}
+
+.header-login button,
+.header-login a {
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.header-login button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+.header-login a {
+    background-color: var(--secondary);
+    color: var(--dark);
+    border: none;
+}
+
+.header-login button:hover,
+.header-login a:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.header-login button:hover {
+    background-color: var(--primary-dark);
+}
+
+.header-login a:hover {
+    background-color: var(--secondary-dark);
+    color: var(--light);
+}
+
+/* Hero Banner */
+.hero-banner {
+    height: 500px;
+    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('../img/zakat-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light);
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.moon-star-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.moon-star-icon .fa-moon {
+    color: var(--secondary);
+    font-size: 3rem;
+    margin-right: -15px;
+}
+
+.moon-star-icon .fa-star {
+    color: var(--secondary);
+    position: relative;
+    top: -20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--light);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--light);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Main Title */
+.main-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+    color: var(--dark);
+}
+
+.main-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+/* Islamic Separator */
+.islamic-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.separator-line {
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--secondary), transparent);
+    flex-grow: 1;
+}
+
+.separator-icon {
+    margin: 0 20px;
+    color: var(--secondary);
+    font-size: 2rem;
+}
+
+/* Status Cards */
+.status-section {
+    margin-bottom: 40px;
+}
+
+.status-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background-color: var(--light);
+    margin-bottom: 20px;
+    border-left: 5px solid transparent;
+}
+
+.status-icon {
+    font-size: 2rem;
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.status-content h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.status-content p {
+    margin-bottom: 0;
+    color: var(--gray);
+}
+
+.success-card {
+    border-left-color: var(--success);
+}
+
+.success-card .status-icon {
+    color: var(--success);
+    background-color: rgba(80, 200, 120, 0.1);
+}
+
+.error-card {
+    border-left-color: var(--error);
+}
+
+.error-card .status-icon {
+    color: var(--error);
+    background-color: rgba(255, 56, 92, 0.1);
+}
+
+.info-card {
+    border-left-color: var(--info);
+}
+
+.info-card .status-icon {
+    color: var(--info);
+    background-color: rgba(0, 51, 102, 0.1);
+}
+
+/* Zakat Description Section */
+.zakat-description {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 60px;
+    background-color: var(--light);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.description-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.description-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.description-content {
+    flex: 1;
+    padding: 30px;
+    min-width: 300px;
+}
+
+.description-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.description-content h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.zakat-quote {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(212, 175, 55, 0.1);
+    border-left: 3px solid var(--secondary);
+    position: relative;
+}
+
+.zakat-quote .fa-quote-left {
+    color: var(--secondary);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.zakat-quote p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.zakat-quote span {
+    display: block;
+    text-align: right;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Features Section */
+.features-section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.section-title i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--light);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-image: url('../img/arabesque-corner.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    pointer-events: none;
+}
+/* Footer Styles */
+footer {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid var(--secondary);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section {
+    position: relative;
+}
+
+.footer-section h3 {
+    color: var(--light);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
+    transform: translateX(5px);
+}
+
+.footer-links a i {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-contact-item i {
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.footer-bottom::before {
+    content: "☪";
+    color: var(--secondary);
+    font-size: 1.5rem;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--dark);
+    padding: 0 20px;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.footer-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/pattern-arab.png');
+    background-repeat: repeat;
+    background-size: 200px;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+/* Auth Styles */
+.auth-container {
+    display: flex;
+    min-height: 70vh;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background-color: var(--light);
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+.auth-card {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-decoration {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-decoration::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/pattern-arabic.png');
+    background-repeat: repeat;
+    background-size: 200px;
+    opacity: 0.1;
+}
+
+.decoration-text {
+    color: var(--light);
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.decoration-text p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.arabic-text {
+    font-size: 2rem;
+    font-family: 'Traditional Arabic', Arial, sans-serif;
+    direction: rtl;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-title {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.auth-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+.islamic-decoration {
+    margin-top: 15px;
+}
+
+.islamic-pattern {
+    color: var(--secondary);
+    font-size: 2rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 1px
+    
+}
+
+/* Form Styles */
+.form-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-field {
+    position: relative;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--light);
+    border-radius: var(--radius);
+    border: 1px solid var(--light-gray);
+    transition: var(--transition);
+}
+
+.input-group:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(80, 200, 120, 0.2);
+}
+
+.input-icon {
+    padding: 0 1rem;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+}
+
+.form-input {
+    flex: 1;
+    padding: 1rem 1rem 1rem 0;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    outline: none;
+}
+
+.floating-label {
+    position: absolute;
+    left: 3.5rem;
+    top: 1rem;
+    color: var(--gray);
+    background: var(--light);
+    padding: 0 0.25rem;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.form-input:focus + .floating-label,
+.form-input:not(:placeholder-shown) + .floating-label {
+    top: -0.5rem;
+    left: 2.5rem;
+    font-size: 0.8rem;
+    color: var(--primary);
+}
+
+.password-toggle {
+    background: none;
+    border: none;
+    padding: 0 1rem;
+    color: var(--gray);
+    cursor: pointer;
+}
+
+.password-strength {
+    margin-top: 0.5rem;
+}
+
+.strength-bar {
+    height: 4px;
+    width: 0;
+    background: var(--error);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.input-hint {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: 0.25rem;
+    padding-left: 3.5rem;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gray);
+    margin: 1rem 0;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--light-gray);
+}
+
+.auth-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--dark);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.auth-link:hover {
+    color: var(--primary);
+}
+
+
+}
