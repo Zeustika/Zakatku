@@ -10,7 +10,6 @@
 - 🧑‍🤝‍🧑 **Mustahik Data Management**: Add, update, or delete data of zakat recipients.
 - 📊 **Transaction Reports**: View summaries and histories of zakat distribution.
 - 📅 **Real-Time Date Filtering**: Filter transactions based on date ranges.
-- 🔐 **Admin Authentication**: Secure login system for administrators.
 
 ---
 
